@@ -1,0 +1,43 @@
+# MyBizGate site configuration. The slug is the permanent identity; the domain may change later.
+client:
+  name: My Service Company
+  slug: service
+template:
+  id: 00-empty-template
+  version: 1.0.0
+platform_ref: v1.7.1
+domain:
+  type: subdomain
+  primary: demo-service.niagova.com
+business:
+  whatsapp: '+601158121239'
+  email: sales@niagova.com
+  address: Kampung Pandan, 2A Lorong Delapan, 55100 Kuala Lumpur
+  facebook: www.facebook.com
+  instagram: www.instagram.com
+  tiktok: www.titktok.com
+  short_name: My Service
+  locality: Kuala Lumpur
+hosting:
+  deploy_dir: public_html/demo/service/
+  ftp_account: dedicated
+site:
+  kind: demo
+  environment: production
+  production_url: https://demo-service.niagova.com
+  identity: My Service Company
+build:
+  exclude: []
+  images:
+    convert: true
+    quality: 82
+    max_width: 1920
+    preserve: []
+  cache_bust: true
+qa:
+  lighthouse: false
+  browser_smoke: false
+  screenshots: false
+github:
+  repo: demo-service
+  visibility: public
