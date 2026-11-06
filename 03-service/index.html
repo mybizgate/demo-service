@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e293b">
+  <meta name="description" content="My Service Company — aircond servicing, plumbing, electrical and handyman work across the Klang Valley. Flat prices shown, coverage checker, technician time windows and job tracking. Book in one WhatsApp message.">
+  <meta name="author" content="Niagova">
+  <title>My Service Company | Flat prices. Real time windows. One message.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=__BUILD_VERSION__">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="My Service Company home"><span class="brand-mark" aria-hidden="true">🔧</span><span class="brand-name">My Service<small>Home Services · Klang Valley</small></span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation"><a href="#prices">Prices</a><a href="#coverage">Coverage</a><a href="#book">Book</a><a href="#track">Track a job</a><a href="#team">Team</a><a href="#ask">Ask us</a></nav>
+      <div class="nav-actions"><a class="button button-orange" href="#book">Book a technician</a><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation"><span></span><span></span><span></span></button></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="chip chip-orange">Flat prices, no surprises</span><span class="chip chip-slate" id="heroWindow">Next window: checking…</span></p>
+          <h1>Aircond, plumbing, electrical. <em>Price shown. Time window chosen. Done.</em></h1>
+          <p class="lead">No more "berapa?" and "boleh datang bila?" messages. Pick the job, check your area, choose a two-hour window, and a technician with the parts on the van turns up. Track the job from your phone.</p>
+          <div class="hero-actions"><a class="button button-orange" href="#book">Book in 60 seconds</a><a class="button button-outline" href="#prices">See the price list</a></div>
+          <ul class="trust"><li><strong data-count="18500" data-suffix="+">0</strong><span>jobs completed</span></li><li><strong>2-hour</strong><span>arrival windows</span></li><li><strong>30-day</strong><span>workmanship guarantee</span></li></ul>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo"><img src="images/svc-hero-tech.webp" alt="A My Service technician in an orange polo servicing a wall air-conditioner while the homeowner watches with a cup of tea" fetchpriority="high"></div>
+          <div class="status-card reveal"><span class="pulse" aria-hidden="true"></span><div><small>Technicians on the road now</small><strong id="techsNow">—</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <section class="prices" id="prices">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">Price list</p><h2>What it costs, <em>before anyone comes.</em></h2></div><div class="filters" id="catFilters" role="tablist" aria-label="Service categories"></div></div>
+        <div class="price-grid reveal" id="priceGrid"></div>
+        <p class="fine-print">Illustrative proposal prices in RM, inclusive of labour and transport inside the covered zones. Parts quoted on site before any work. Replace with the company's live list.</p>
+      </div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section class="coverage" id="coverage">
+      <div class="wrap coverage-grid">
+        <div class="coverage-copy reveal">
+          <p class="eyebrow">Do we cover your area?</p>
+          <h2>Type your area or postcode. <em>Get a yes, a travel fee, or a no.</em></h2>
+          <p>Our vans run three zones across the Klang Valley. Zone 1 is free travel. Zone 2 adds a small fee. Outside that, we tell you honestly so you don't wait.</p>
+          <form class="zone-form" id="zoneForm"><input id="zoneInput" type="search" placeholder="e.g. Subang Jaya, 47500, Ampang" autocomplete="off" aria-label="Your area or postcode"><button class="button button-ink" type="submit">Check</button></form>
+          <div class="zone-result" id="zoneResult" aria-live="polite"></div>
+        </div>
+        <div class="zone-map reveal" aria-hidden="true">
+          <div class="zone z1"><strong>Zone 1</strong><span>Free travel</span><em>PJ · Subang · Shah Alam · Puchong · KL city · Cheras · Ampang</em></div>
+          <div class="zone z2"><strong>Zone 2</strong><span>+ RM 25 travel</span><em>Klang · Kajang · Bangi · Rawang · Sungai Buloh · Seri Kembangan</em></div>
+          <div class="zone z3"><strong>Zone 3</strong><span>+ RM 60, min. 2 jobs</span><em>Semenyih · Nilai · Banting · Kuala Selangor</em></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section class="book" id="book">
+      <div class="wrap book-grid">
+        <div class="book-copy reveal">
+          <p class="eyebrow">Book a technician</p>
+          <h2>Three taps, <em>one message, job number issued.</em></h2>
+          <p>Add jobs from the price list, pick a two-hour window, send. You get a job number straight away and can track it below.</p>
+          <div class="cart" id="cart"><div class="cart-head"><strong>Your jobs</strong><span id="cartMeta">Nothing added yet</span></div><ul class="cart-list" id="cartList"></ul><div class="cart-total"><span>Estimated total <em id="cartTravel"></em></span><strong id="cartTotal">RM 0</strong></div></div>
+          <div class="windows reveal">
+            <p class="eyebrow">Arrival window</p>
+            <div class="day-strip" id="dayStrip" role="tablist" aria-label="Choose a day"></div>
+            <div class="slots" id="slots"></div>
+            <p class="fine-print">Demo dispatch calendar generated in your browser. In production this reads the dispatch board.</p>
+          </div>
+        </div>
+        <form class="book-form reveal" id="bookForm" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="phone">WhatsApp number</label><input id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="01x-xxx xxxx"></div>
+            <div class="field full"><label for="address">Address</label><input id="address" name="address" required placeholder="Unit, street, taman, postcode"></div>
+            <div class="field"><label for="property">Property</label><select id="property" name="property"><option>Condo / apartment</option><option>Terrace house</option><option>Semi-D / bungalow</option><option>Shop / office</option></select></div>
+            <div class="field"><label for="access">Access</label><select id="access" name="access"><option>I'll be home</option><option>Guard house, I'll register the van</option><option>Key with neighbour / agent</option></select></div>
+            <div class="field full"><label for="addJob">Add a job</label><div class="add-row"><select id="addJob"><option value="">Choose from the price list</option></select><button class="button button-outline" type="button" id="addJobBtn">Add</button></div></div>
+            <div class="field full"><label for="notes">Describe the problem</label><textarea id="notes" name="notes" placeholder="e.g. Aircond in master bedroom not cold, water dripping. Brand Daikin, 1.5 HP. Photo to follow."></textarea></div>
+            <input type="hidden" id="date" name="date"><input type="hidden" id="time" name="time">
+          </div>
+          <div class="form-actions"><button class="button button-orange" type="submit">Send booking on WhatsApp</button><button class="button button-outline" type="button" id="copyBooking">Copy message</button></div>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- TRACK -->
+    <section class="track" id="track">
+      <div class="wrap track-grid">
+        <div class="track-copy reveal"><p class="eyebrow">Track a job</p><h2>Where is my technician? <em>Look here, not in the chat.</em></h2><p>Every booking gets a FM number. Enter it to see the status timeline. In production the dispatch board updates it live; here it steps forward on its own as a demo.</p>
+          <form class="track-form" id="trackForm"><input id="trackInput" type="search" placeholder="FM-2026-XXXX" autocomplete="off" aria-label="Job number"><button class="button button-ink" type="submit">Track</button></form>
+          <p class="fine-print" id="trackHint">Your recent job numbers on this device will appear here after you book.</p>
+        </div>
+        <div class="track-card reveal" id="trackCard"><div class="track-empty"><span>🚐</span><p>Enter a job number to see the timeline.</p></div></div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" aria-label="Our technicians at work">
+      <div class="wrap section-head reveal"><div><p class="eyebrow">On the job</p><h2>Clean work, <em>clean floors after.</em></h2></div></div>
+      <div class="strip reveal">
+        <figure><img src="images/svc-plumber.webp" alt="A technician tightening a pipe fitting under a kitchen sink" loading="lazy"><figcaption>Plumbing · leak repair, Puchong</figcaption></figure>
+        <figure><img src="images/svc-electrician.webp" alt="A technician testing a residential distribution board" loading="lazy"><figcaption>Electrical · DB check, Subang Jaya</figcaption></figure>
+        <figure><img src="images/svc-van.webp" alt="A My Service van with a technician unloading a toolbox in front of a terrace house" loading="lazy"><figcaption>Parts on the van, no second trip</figcaption></figure>
+        <figure><img src="images/svc-hero-tech.webp" alt="A technician cleaning a wall air-conditioner" loading="lazy"><figcaption>Aircond · chemical wash, Cheras</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- TEAM + FOUNDER -->
+    <section class="team" id="team">
+      <div class="wrap team-grid">
+        <figure class="team-photo reveal"><img src="images/svc-team.webp" alt="Four My Service technicians in orange polos standing in front of their van with tools" loading="lazy"></figure>
+        <div class="team-copy reveal">
+          <p class="eyebrow">From the founder</p>
+          <h2>I used to lose two hours a night <em>answering "berapa?".</em></h2>
+          <p>I started this company with one van and a phone. By the second year I had six technicians and one phone, mine, buzzing until midnight: "berapa service aircond?", "cover Kajang tak?", "esok boleh datang pukul berapa?". I answered every one by hand, and still lost jobs to whoever replied first.</p>
+          <p>This website is the answer I wish I'd had in year one. Prices on the page. A zone checker. Real time windows from the dispatch board. A job number people can track instead of asking me. My technicians fix things. The website answers things.</p>
+          <p class="signature">— Shahrul Nizam, founder</p>
+          <ul class="team-list"><li><span class="avatar">SN</span><div><strong>Shahrul Nizam</strong><span>Founder · aircond specialist, 14 years</span></div></li><li><span class="avatar">RK</span><div><strong>Ravi Krishnan</strong><span>Lead plumber · Suruhanjaya-registered</span></div></li><li><span class="avatar">LC</span><div><strong>Lim Chee Keong</strong><span>Electrician · wireman PW4</span></div></li><li><span class="avatar">NA</span><div><strong>Nurul Ain</strong><span>Dispatch &amp; customer care</span></div></li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">Customers say</p><h2>"Came in the window. <em>Charged the price on the website."</em></h2></div><div class="rating-tile"><strong>4.8</strong><div><span class="stars">★★★★★</span><small>Illustrative · connect Google reviews</small></div></div></div>
+        <div class="review-grid reveal">
+          <article class="review"><span class="stars">★★★★★</span><p>"Booked two aircond services at 11 pm, picked the 10–12 window, technician arrived 10:20. Price exactly as listed. Didn't message anyone."</p><footer>Nadia H. · condo, Mont Kiara</footer></article>
+          <article class="review"><span class="stars">★★★★★</span><p>"Checked my area first, saw the RM 25 travel fee upfront, fine. Plumber fixed the leak and showed me the old part. Tracked the van on the site."</p><footer>Kumar S. · terrace, Kajang</footer></article>
+          <article class="review"><span class="stars">★★★★★</span><p>"Electrical trip at 9 pm, used the Ask us box, got the safety steps immediately, electrician came next morning first window."</p><footer>Jessica T. · semi-D, Bandar Utama</footer></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASK -->
+    <section class="ask" id="ask">
+      <div class="wrap ask-grid">
+        <div class="ask-copy reveal"><p class="eyebrow">Ask us</p><h2>Questions you'd WhatsApp at 9 pm, <em>answered at 9 pm.</em></h2><p>Gas top-up, chemical wash vs normal service, water heater trips, parts warranty, public holidays. It searches our own answers first.</p><div class="suggest" id="askSuggest"><button type="button" data-q="chemical wash">Chemical wash vs service?</button><button type="button" data-q="aircond not cold">Aircond not cold</button><button type="button" data-q="trip electricity">Electricity tripped</button><button type="button" data-q="warranty">Warranty?</button><button type="button" data-q="public holiday">Public holidays?</button></div></div>
+        <div class="ask-panel reveal"><form class="ask-form" id="askForm" role="search"><span aria-hidden="true">🔧</span><input id="askInput" type="search" placeholder="Ask about a price, a problem or a policy…" autocomplete="off" aria-label="Ask us"><button class="button button-ink" type="submit">Ask</button></form><div class="ask-results" id="askResults" aria-live="polite"><div class="ask-empty"><span>💬</span><p>Try "water heater", "gas top up" or "do you install".</p></div></div><p class="ask-fallback">Not here? <a href="https://wa.me/601158121239?text=Hi%20My%20Service%20Company%2C%20quick%20question%3A%20" target="_blank" rel="noopener">WhatsApp dispatch</a>.</p></div>
+      </div>
+    </section>
+
+    <!-- PITCH -->
+    <section class="pitch" id="for-owners" aria-labelledby="pitch-title">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">For the service business owner · website by Niagova</p><h2 id="pitch-title">Every job you win starts with three questions. <em>Let the website answer them.</em></h2></div><p class="lead">"Berapa?" "Cover my area?" "Bila boleh datang?" A home-services business answers them hundreds of times a week, and loses the job every time the answer is slow. This website answers all three instantly, issues a job number, and hands dispatch a complete booking.</p></div>
+        <div class="compare reveal">
+          <div class="compare-col before"><h3>Replying by hand</h3><ul><li>Price list as a photo on WhatsApp status, different numbers quoted by different technicians.</li><li>"Cover Kajang?" answered with "where exactly?" and three more messages.</li><li>Time windows promised from memory, then double-booked.</li><li>"Where's the technician?" calls interrupting the technician.</li><li>Customers book whoever replies first, usually not you.</li></ul></div>
+          <div class="compare-col after"><h3>With this web system</h3><ul><li>Flat price list published once, every technician quotes the same number.</li><li>Zone checker answers coverage and travel fee in one tap.</li><li>Two-hour windows from the dispatch calendar, picked by the customer.</li><li>Job number and tracking page replace "where are you?" calls.</li><li>Ask us handles the 9 pm safety questions and books the morning slot.</li></ul></div>
+        </div>
+        <div class="metrics reveal"><div><strong data-count="3">0</strong><span>questions answered before the first message: price, area, time</span></div><div><strong data-count="24" data-suffix="/7">0</strong><span>bookings and tracking while your technicians sleep</span></div><div><strong data-count="1">0</strong><span>yearly managed plan: hosting, price edits, support</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="niagova-band" aria-labelledby="niagova-title">
+  <div class="niagova-band-inner">
+    <div>
+      <img src="images/niagova-logo-on-dark.svg" alt="Niagova" width="150" height="36" loading="lazy">
+      <p class="niagova-band-kicker">This demo website is built by Niagova</p>
+      <h2 id="niagova-title">Want a website like this for your business?</h2>
+      <p class="niagova-band-copy">Websites, booking systems and business apps for Malaysian SMEs. Every package and price is on niagova.com.</p>
+    </div>
+    <a class="niagova-band-cta" href="https://niagova.com/#pricing" target="_blank" rel="noopener">View Niagova packages <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap footer-row"><span>© <span id="year"></span> My Service Company · Demo website by <a href="https://niagova.com/" target="_blank" rel="noopener">Niagova</a>.</span><span>Photos, prices, zones, reviews, job statuses and schedule are illustrative proposal content.</span></div></footer>
+  <div class="sticky-bar"><a href="#track">Track job</a><a class="primary" href="#book">Book now</a></div>
+  <a class="wa-float" href="https://wa.me/601158121239?text=Hi%20My%20Service%20Company%2C%20I%27d%20like%20to%20book%20a%20technician." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c1.6.7 2.3.7 3.1.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="index.js?v=__BUILD_VERSION__" defer></script>
+</body>
+</html>

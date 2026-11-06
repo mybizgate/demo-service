@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b3d2e">
+  <meta name="description" content="My Service Company — residential and commercial solar PV installer in Malaysia. Calculate your savings from your TNB bill, see package prices, book a site survey slot and get a quotation in one message.">
+  <meta name="author" content="Niagova">
+  <title>My Service Company | See your savings before you message us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=__BUILD_VERSION__">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="My Service Company home"><span class="brand-sun" aria-hidden="true"></span><span class="brand-name">My Service<small>Solar · Malaysia</small></span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation"><a href="#calc">Calculator</a><a href="#packages">Packages</a><a href="#how">How it works</a><a href="#projects">Projects</a><a href="#ask">Ask us</a><a href="#founders">Founders</a></nav>
+      <div class="nav-actions"><a class="button button-sun" href="#survey">Book a site survey</a><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation"><span></span><span></span><span></span></button></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="chip chip-sun">NEM-ready</span><span class="chip chip-sky" id="heroSlot">Next survey slot: checking…</span></p>
+          <h1>Your TNB bill, <em>cut in half.</em> See the numbers before you talk to anyone.</h1>
+          <p class="lead">Move one slider and get your system size, price, monthly saving and payback. No "berapa harga?" WhatsApp needed. When you're ready, pick a survey slot and we come to measure your roof.</p>
+          <div class="hero-actions"><a class="button button-sun" href="#calc">Calculate my savings</a><a class="button button-outline" href="#packages">See package prices</a></div>
+          <ul class="trust"><li><strong data-count="1240" data-suffix="+">0</strong><span>roofs installed</span></li><li><strong data-count="38" data-suffix=" MWp">0</strong><span>capacity delivered</span></li><li><strong>25 yr</strong><span>panel warranty</span></li></ul>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo"><img src="images/sol-hero-roof.webp" alt="Installers giving a thumbs-up beside new solar panels on a terrace-house roof at golden hour" fetchpriority="high"></div>
+          <div class="sun-card reveal"><div class="sun-ring" aria-hidden="true"><span id="sunPct">0%</span></div><div><strong id="sunLabel">Sun right now</strong><span id="sunNote">Estimating today's generation…</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="calc" id="calc">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">Savings calculator</p><h2>One slider. <em>Every number you'd normally ask us for.</em></h2></div><p class="lead">Illustrative estimates based on typical Malaysian sunlight and 2026 residential tariffs. The site survey confirms the final design and price.</p></div>
+        <div class="calc-grid reveal">
+          <div class="calc-inputs">
+            <label>Your average monthly TNB bill <output id="billOut">RM 350</output><input type="range" id="bill" min="150" max="2500" step="10" value="350"></label>
+            <div class="seg" role="group" aria-label="Property type"><button type="button" class="active" data-type="home">Home</button><button type="button" data-type="business">Business</button></div>
+            <label>Roof direction <select id="roof"><option value="1">South-facing or flat (best)</option><option value="0.95" selected>East or west</option><option value="0.85">North-facing or shaded</option></select></label>
+            <p class="fine-print">Assumes 115 kWh per kWp per month, 550 W panels, NEM net offset at tariff. Replace the constants in index.js with the installer's own models.</p>
+          </div>
+          <div class="calc-out">
+            <div class="big"><span>Recommended system</span><strong id="outKwp">—</strong><em id="outPanels">—</em></div>
+            <div><span>Estimated price</span><strong id="outPrice">—</strong><em id="outFinance">—</em></div>
+            <div class="good"><span>New monthly bill</span><strong id="outNewBill">—</strong><em id="outSaving">—</em></div>
+            <div><span>Payback</span><strong id="outPayback">—</strong><em id="outLifetime">—</em></div>
+            <div><span>CO₂ avoided</span><strong id="outCo2">—</strong><em id="outTrees">—</em></div>
+            <button class="button button-ink" type="button" id="calcToQuote">Get this quoted →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="packages" id="packages">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">Packages</p><h2>Prices on the page, <em>not in a PDF.</em></h2></div><p class="lead">All-in: panels, inverter, mounting, wiring, TNB and SEDA paperwork, monitoring app and installation. Instalments through partner banks from 0%.</p></div>
+        <div class="pack-grid reveal" id="packGrid"></div>
+        <p class="fine-print">Illustrative proposal prices in RM, inclusive of installation. Replace with the installer's current price list.</p>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="how" id="how">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">How it works</p><h2>From bill to switch-on <em>in about six weeks.</em></h2></div></div>
+        <ol class="timeline reveal">
+          <li><span>1</span><strong>Calculate &amp; book</strong><p>Use the calculator, pick a survey slot. Takes two minutes.</p></li>
+          <li><span>2</span><strong>Site survey</strong><p>We measure the roof, check your DB and shading, and confirm the design on a tablet.</p></li>
+          <li><span>3</span><strong>Fixed quotation</strong><p>Final price within 48 hours, with the TNB/SEDA application included.</p></li>
+          <li><span>4</span><strong>Install in a day</strong><p>Most homes are done between 9 am and 4 pm. Commercial roofs, a week.</p></li>
+          <li><span>5</span><strong>NEM approval &amp; switch-on</strong><p>We handle the meter change. You watch the app go green.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SURVEY SLOTS -->
+    <section class="survey" id="survey">
+      <div class="wrap survey-grid">
+        <div class="survey-copy reveal">
+          <p class="eyebrow">Book a site survey</p>
+          <h2>Pick your area, <em>pick your slot.</em></h2>
+          <p>Our survey van routes by area each day. Choose yours to see real openings. The survey is free and takes about 45 minutes.</p>
+          <div class="area-pills" id="areaPills" role="tablist" aria-label="Choose your area"></div>
+          <div class="day-strip" id="dayStrip" role="tablist" aria-label="Choose a day"></div>
+          <div class="slots" id="slots"></div>
+          <p class="fine-print">Demo routing calendar generated in your browser. In production this reads the survey team's calendar.</p>
+        </div>
+        <form class="quote-form reveal" id="quoteForm" novalidate>
+          <h3>Your quotation request</h3>
+          <div class="summary" id="summary"><div><span>System</span><strong id="sumSystem">Use the calculator</strong></div><div><span>Survey</span><strong id="sumSurvey">Pick a slot</strong></div><div><span>Area</span><strong id="sumArea">—</strong></div></div>
+          <div class="form-grid">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="phone">WhatsApp number</label><input id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="01x-xxx xxxx"></div>
+            <div class="field full"><label for="address">Property address</label><input id="address" name="address" placeholder="Street, taman, postcode"></div>
+            <div class="field"><label for="ptype">Property</label><select id="ptype" name="ptype"><option>Terrace house</option><option>Semi-D / bungalow</option><option>Condo (rooftop rights)</option><option>Shop lot / office</option><option>Factory / warehouse</option></select></div>
+            <div class="field"><label for="finance">Payment</label><select id="finance" name="finance"><option>Cash</option><option>0% instalment (bank partner)</option><option>Green financing / loan</option><option>Not sure yet</option></select></div>
+            <div class="field full"><label for="notes">Notes</label><textarea id="notes" name="notes" placeholder="Roof type, existing aircond load, EV charger plans, anything else"></textarea></div>
+            <input type="hidden" id="date" name="date"><input type="hidden" id="time" name="time">
+          </div>
+          <div class="form-actions"><button class="button button-sun" type="submit">Send on WhatsApp</button><button class="button button-outline" type="button" id="copyQuote">Copy message</button></div>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="wrap section-head reveal"><div><p class="eyebrow">Recent installs</p><h2>Roofs like yours, <em>already generating.</em></h2></div></div>
+      <div class="strip reveal">
+        <figure><img src="images/sol-hero-roof.webp" alt="Terrace house roof with a new solar array" loading="lazy"><figcaption><strong>Terrace, Shah Alam</strong><span>6.6 kWp · bill RM 420 → RM 95</span></figcaption></figure>
+        <figure><img src="images/sol-factory-roof.webp" alt="Factory rooftop covered in solar panels" loading="lazy"><figcaption><strong>Factory, Klang</strong><span>480 kWp · RM 31k/month saved</span></figcaption></figure>
+        <figure><img src="images/sol-installer.webp" alt="Installer bolting a panel to a roof rail" loading="lazy"><figcaption><strong>Semi-D, Puchong</strong><span>9.9 kWp · installed in one day</span></figcaption></figure>
+        <figure><img src="images/sol-family-app.webp" alt="A family checking their solar app on a sofa" loading="lazy"><figcaption><strong>Bungalow, Kajang</strong><span>13.2 kWp + EV charger</span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ASK US -->
+    <section class="ask" id="ask">
+      <div class="wrap ask-grid">
+        <div class="ask-copy reveal"><p class="eyebrow">Ask us</p><h2>Everything people WhatsApp us, <em>answered in a second.</em></h2><p>NEM, financing, warranty, rain, condos, maintenance. It searches our own answers. Only the unusual question reaches a human.</p><div class="suggest" id="askSuggest"><button type="button" data-q="nem">What is NEM?</button><button type="button" data-q="rain cloudy">Works when it rains?</button><button type="button" data-q="warranty">Warranty?</button><button type="button" data-q="condo">Condo?</button><button type="button" data-q="instalment loan">Instalments?</button></div></div>
+        <div class="ask-panel reveal"><form class="ask-form" id="askForm" role="search"><span aria-hidden="true">☀️</span><input id="askInput" type="search" placeholder="Ask about price, NEM, roof, financing…" autocomplete="off" aria-label="Ask us"><button class="button button-ink" type="submit">Ask</button></form><div class="ask-results" id="askResults" aria-live="polite"><div class="ask-empty"><span>💡</span><p>Try "how long to install", "maintenance" or "EV charger".</p></div></div><p class="ask-fallback">Not here? <a href="https://wa.me/601158121239?text=Hi%20My%20Service%20Company%2C%20quick%20question%3A%20" target="_blank" rel="noopener">WhatsApp a human</a>.</p></div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section class="founders" id="founders">
+      <div class="wrap founders-grid">
+        <figure class="founders-photo reveal"><img src="images/sol-founders.webp" alt="My Service co-founders standing in front of their van loaded with solar panels" loading="lazy"></figure>
+        <div class="founders-copy reveal">
+          <p class="eyebrow">From the founders</p>
+          <h2>We used to spend our evenings <em>typing the same quote.</em></h2>
+          <p>"Berapa harga untuk rumah saya?" is the right question. For two years we answered it one WhatsApp at a time: ask for the bill, ask for a roof photo, do the maths, send a PDF, wait. Half the people went quiet before we could even visit.</p>
+          <p>So we built the calculator you see above. Now people arrive at the survey already knowing their system size and payback. We talk about their roof instead of their bill, and our evenings are ours again.</p>
+          <p class="signature">— Farah Hanim &amp; Daniel Wong, co-founders</p>
+          <p class="sample-note">Sample credentials for this demo. Your real licences and registration numbers go here.</p>
+          <ul class="creds"><li>SEDA-registered PV service provider</li><li>Suruhanjaya Tenaga licensed installers</li><li>Tier-1 panels, 25-year performance warranty</li><li>Monitoring app, lifetime</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">Customers say</p><h2>"The calculator was <em>within RM 40</em> of the real bill."</h2></div><div class="rating-tile"><strong>4.9</strong><div><span class="stars">★★★★★</span><small>Illustrative · connect Google reviews</small></div></div></div>
+        <div class="review-grid reveal">
+          <article class="review"><span class="stars">★★★★★</span><p>"Used the calculator at 11 pm, booked the Saturday survey slot myself, had a fixed quote by Monday. Never had to ask 'berapa'."</p><footer>Hafiz R. · terrace, Shah Alam</footer></article>
+          <article class="review"><span class="stars">★★★★★</span><p>"Our factory bill dropped by a third. They handled TNB and SEDA, we just signed. The app is addictive."</p><footer>Mei Ling T. · plant manager, Klang</footer></article>
+          <article class="review"><span class="stars">★★★★★</span><p>"Installed in one day, cleaned up, showed my dad how to read the app. Payback is on track for year five."</p><footer>Arjun N. · bungalow, Kajang</footer></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PITCH -->
+    <section class="pitch" id="for-owners" aria-labelledby="pitch-title">
+      <div class="wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">For the startup founder · website by Niagova</p><h2 id="pitch-title">Your best salesperson works at 11 pm <em>and never asks for the bill twice.</em></h2></div><p class="lead">Solar buyers research for weeks before they talk to anyone. If your answer to "how much?" is "send me your bill", you lose them to the installer whose website answered first. This site qualifies the lead, books the survey and hands you a complete request.</p></div>
+        <div class="compare reveal">
+          <div class="compare-col before"><h3>Replying by hand</h3><ul><li>Every enquiry starts with "send me your TNB bill and a roof photo".</li><li>Quotes typed from memory, in different formats, by whoever is free.</li><li>Survey dates agreed over eight messages, then forgotten.</li><li>Half the leads go quiet before the first visit.</li><li>No proof of past work when someone searches your name.</li></ul></div>
+          <div class="compare-col after"><h3>With this web system</h3><ul><li>The calculator answers price, size and payback in seconds, 24/7.</li><li>Package prices published once, edited in minutes.</li><li>Survey slots picked by the customer, by area, flowing into one referenced request.</li><li>Ask us handles NEM, warranty and financing questions automatically.</li><li>Projects, founders and credentials visible to every searcher.</li></ul></div>
+        </div>
+        <div class="metrics reveal"><div><strong data-count="4">0</strong><span>numbers answered before the first message: size, price, saving, payback</span></div><div><strong data-count="24" data-suffix="/7">0</strong><span>lead qualification while your installers sleep</span></div><div><strong data-count="1">0</strong><span>yearly managed plan: hosting, price updates, support</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="niagova-band" aria-labelledby="niagova-title">
+  <div class="niagova-band-inner">
+    <div>
+      <img src="images/niagova-logo-on-dark.svg" alt="Niagova" width="150" height="36" loading="lazy">
+      <p class="niagova-band-kicker">This demo website is built by Niagova</p>
+      <h2 id="niagova-title">Want a website like this for your business?</h2>
+      <p class="niagova-band-copy">Websites, booking systems and business apps for Malaysian SMEs. Every package and price is on niagova.com.</p>
+    </div>
+    <a class="niagova-band-cta" href="https://niagova.com/#pricing" target="_blank" rel="noopener">View Niagova packages <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap footer-row"><span>© <span id="year"></span> My Service Company · Demo website by <a href="https://niagova.com/" target="_blank" rel="noopener">Niagova</a>.</span><span>Photos, prices, estimates, reviews and schedule are illustrative proposal content.</span></div></footer>
+  <div class="sticky-bar"><a href="#calc">Calculate</a><a class="primary" href="#survey">Book survey</a></div>
+  <a class="wa-float" href="https://wa.me/601158121239?text=Hi%20My%20Service%20Company%2C%20I%27d%20like%20a%20solar%20quotation." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c1.6.7 2.3.7 3.1.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="index.js?v=__BUILD_VERSION__" defer></script>
+</body>
+</html>
